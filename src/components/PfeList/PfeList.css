@@ -1,0 +1,7 @@
+.row{
+    margin-top: 30px;
+}
+th{
+    table-layout: auto;
+    width: 100%;
+}

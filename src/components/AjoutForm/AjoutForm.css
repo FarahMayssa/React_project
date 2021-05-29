@@ -1,0 +1,29 @@
+.row{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width:60em;
+    padding-top: 2px;
+    margin-top: 10px;
+  
+
+}
+
+
+.form-control{
+    margin-top: 10px;
+}
+.btn_ajout{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width:60em;
+}
+.text{
+    padding-top:50px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width:57em;
+    margin-bottom: 2px;
+}

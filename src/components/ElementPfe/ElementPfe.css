@@ -1,0 +1,7 @@
+td{
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #adb5bd;
+    table-layout: auto;
+    width: 150px;
+}

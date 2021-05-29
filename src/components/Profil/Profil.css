@@ -1,0 +1,33 @@
+.title1{
+    font-family: cursive;
+}
+.title2{
+    font-family: cursive;
+}
+.title3{
+    font-family: cursive;
+}
+.title4{
+    font-family: cursive;
+}
+.title5{
+    font-family: cursive;
+}
+.title6{
+    font-family: cursive;
+}
+.title7{
+    font-family: cursive;
+}
+
+.profile-img{
+    margin-left: 50px;
+}
+.profile-basic{
+ border-style:solid; 
+ border-color: gray;
+ border-radius: 1px; 
+ margin-left: 300px;
+ margin-right: 300px;
+ margin-top: 50px;
+}
