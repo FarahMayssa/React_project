@@ -1,9 +1,10 @@
 import Axios from 'axios'
-
-export const fetchEtu= async () => {
+  
+export const addStudent= async (student) => {
     //await delay(1000)
-    const result = await Axios.get(
-        "http://localhost:3000/api/etudiants" ,
+
+    const result = await Axios.post(
+        "http://localhost:3000/api/etudiants" ,student
     )
     return result.data.etudiant
   }

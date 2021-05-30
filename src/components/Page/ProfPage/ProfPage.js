@@ -5,9 +5,29 @@ import Entete from "../../Entete/Entete";
 import Profil from "../../Profil/Profil";
 import TableauPfe from "../../TableauPfe/TableauPfe";
 import Demande from "../../Demande/Demande";
+import { useState } from "react"
+import  { useEffect } from "react";
+import {poststudent} from "../../../Services/etudiant.service"
 
 function ProfPage() {
+
+ /* const [stdn, setStdn] = useState()
+  useEffect(()=>{
+    const postStdn = async () => {
+      const result = await poststudent()
+      setStdn(result)
   
+    }
+  
+    postStdn()
+   
+  },[]) 
+  
+  const addStudent = async()=>{
+    const result = await poststudent()
+    
+  }*/
+
   const itemtab =[{
 
     id:"1",

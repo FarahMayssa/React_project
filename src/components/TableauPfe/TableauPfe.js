@@ -2,26 +2,13 @@
 import React from "react"
 import ElementPfe from "../ElementPfe/ElementPfe"
 import "./TableauPfe.css"
-import { useState } from "react"
-import  { useEffect } from "react";
-import {fetchEtu} from "../../Services/etudiant.service"
 
 
 
 
 export default function TableauPfe(props) {
   
-  const [Etu, setEtu] = useState()
-  useEffect(()=>{
-    const getEtu = async () => {
-      const result = await fetchEtu()
-      setEtu(result)
-    
-    }
-    
-    getEtu()
-   
-  },[]) 
+
     return (
       <div className="tableau_pfe"  >
         <div class="row">
