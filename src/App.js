@@ -12,6 +12,9 @@ import PfePage from "./components/Page/PfePage/PfePage";
 import AdminProfPage from "./components/Page/AdminProfPage/AdminProfPage"
 import AdminEtuPage from "./components/Page/AdminEtuPage/AdminEtuPage"
 
+import LoginPage from "./components/Page/LoginPage/LoginPage";
+import SignUpPage from "./components/Page/SignUpPage/SignUpPage";
+
 
 
 
@@ -23,8 +26,7 @@ function App() {
   return (
     
     <div className="App">
-      
-     
+   
   
       <Router>
         <Switch>
@@ -42,6 +44,12 @@ function App() {
           </Route>
           <Route path="/admin/etudiant/ajout">
             <AdminEtuPage />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route path="/signup">
+            <SignUpPage />
           </Route>
 
         </Switch>

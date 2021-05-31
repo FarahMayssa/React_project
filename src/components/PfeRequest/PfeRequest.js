@@ -1,10 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Demande.css";
+import "./PfeRequest.css";
 import Button from "react-bootstrap/Button";
 
-export default function Demande() {
+export default function PfeRequest() {
+
   return (
-    <div className="Demande">
+    <div className="PfeRequest">
       <div class="card-block">
         <div class="title" style={{ fontFamily: "cursive" }}>
           Demande d'encadrement
@@ -17,7 +18,7 @@ export default function Demande() {
                   <h2>John Doe</h2>
                 </td>
                 <td>E-commerce</td>
-                <td>fichier</td>
+                <td>Description</td>
                 <>
                   <td>
                     <Button

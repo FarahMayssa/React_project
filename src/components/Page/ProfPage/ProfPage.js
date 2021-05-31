@@ -4,29 +4,12 @@ import NavBar from "../../NavBar/NavBar";
 import Entete from "../../Entete/Entete";
 import Profil from "../../Profil/Profil";
 import TableauPfe from "../../TableauPfe/TableauPfe";
-import Demande from "../../Demande/Demande";
-import { useState } from "react"
-import  { useEffect } from "react";
-import {poststudent} from "../../../Services/etudiant.service"
+
+import PfeRequest from "../../PfeRequest/PfeRequest";
 
 function ProfPage() {
 
- /* const [stdn, setStdn] = useState()
-  useEffect(()=>{
-    const postStdn = async () => {
-      const result = await poststudent()
-      setStdn(result)
-  
-    }
-  
-    postStdn()
-   
-  },[]) 
-  
-  const addStudent = async()=>{
-    const result = await poststudent()
-    
-  }*/
+ 
 
   const itemtab =[{
 
@@ -86,7 +69,7 @@ function ProfPage() {
       <Entete title="Enseignant" btnNom="changer mot de passe" />
       <Profil title2="spécialité" text2="Réseau" title3="Bureau" text3="A14" />
       <TableauPfe itemtab={itemtab} />
-      <Demande />
+      <PfeRequest />
     </div>
   );
 }

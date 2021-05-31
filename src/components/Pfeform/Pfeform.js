@@ -1,6 +1,29 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+import { addPfeRequest } from "../../Services/PfeRequest.service";
 
-export default function Pfeform() {
+export default function Pfeform({addPfeRequest}) {
+
+
+  {
+    const [name, setName] = useState("")
+    const [title, setTitle] = useState("")
+    const [supervisor, setSupervisor] = useState("")
+    const [description, setDescription] = useState("")
+    
+   
+
+    const handleAddRequest = () => {
+      addPfeRequest(name, title,supervisor,description)
+      setName("")
+      setDescription("")
+      setTitle("")
+      setSupervisor("")
+      
+      
+    };
+
+  
   return (
     <div className="Pfe-form">
       <div class="row">
@@ -9,18 +32,25 @@ export default function Pfeform() {
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Titre de PFE</label>
+                  <label>Full Name</label>
                   <div class="cal-icon">
-                    <input type="text" class="form-control datetimepicker" />
+                    <input 
+                    onChange={(e) => setName(e.target.value)} 
+                    type="text" 
+                    name="name"
+                    value={name}
+                    class="form-control datetimepicker" />
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Encadrant</label>
+                  <label>Pfe Title</label>
                   <div class="time-icon">
-                    <input
+                    <input onChange={(e) => setTitle(e.target.value)}
                       type="text"
+                      name="title"
+                      value={title}
                       class="form-control"
                       id="datetimepicker3"
                     />
@@ -31,9 +61,14 @@ export default function Pfeform() {
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Cahier de charge</label>
+                  <label>Supervisor</label>
                   <div class="cal-icon">
-                    <input type="text" class="form-control datetimepicker" />
+                    <input 
+                    onChange={(e) => setSupervisor(e.target.value)} 
+                    type="text" 
+                    name="supervisor"
+                    value={supervisor}
+                    class="form-control datetimepicker" />
                   </div>
                 </div>
               </div>
@@ -41,15 +76,21 @@ export default function Pfeform() {
 
             <div class="form-group">
               <label>Description</label>
-              <textarea cols="30" rows="4" class="form-control"></textarea>
+              <textarea 
+               onChange={(e) => setDescription(e.target.value)}
+               cols="30" rows="4" 
+               name="description"
+               value={description}
+               class="form-control"></textarea>
             </div>
 
             <div class="m-t-20 text-center">
-              <button class="btn btn-primary submit-btn">Déposer PFE</button>
+              <button  onClick={handleAddRequest} class="btn btn-primary submit-btn">Send Pfe Request</button>
             </div>
           </form>
         </div>
       </div>
     </div>
   );
+}
 }

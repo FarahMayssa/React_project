@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
 import NavBar from "../../NavBar/NavBar";
 import Entete from "../../Entete/Entete";
 import Profil from "../../Profil/Profil";
 import Pfeform from "../../Pfeform/Pfeform";
+import {addPfeRequest as addPfeRequestFromservice} from "../../../Services/PfeRequest.service"
 
 function EtudiantPage() {
+
+
+  const [pfesRequest, setPfeRequests] = useState([])
+
+
+  const addPfeRequest = async (name,title,supervisor,description) => {
+    try {
+     
+      const newPfeRequest = await addPfeRequestFromservice({
+        name:name,
+        title:title,
+        supervisor:supervisor,
+        description:description
+        
+      })
+      setPfeRequests([...pfesRequest, newPfeRequest])
+      
+    } catch (e) {
+      console.log("error")
+    }
+  }
   return (
     <div className="EtudiantPage">
       <NavBar />
@@ -21,9 +43,9 @@ function EtudiantPage() {
       />
 
       <Entete title="PFE" btnNom="Déposer Pfe" />
-      <Pfeform />
+      <Pfeform  addPfeRequest={addPfeRequest}/>
     </div>
   );
-}
+  }
 
 export default EtudiantPage;
