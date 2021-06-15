@@ -3,7 +3,8 @@ import React, { useEffect,useState } from "react"
 
 import axios from 'axios'
 import { Component } from "react"
-import StudentsList from "../StudentsList/StudentsList"
+
+import {BsPencil,BsTrash,BsEye} from 'react-icons/bs';
 import { Link } from "react-router-dom"
 
 
@@ -33,6 +34,16 @@ class StudentsTab extends Component {
 			console.log(error);
 		  })
 	  }
+    deleteStudents(id,e){
+      axios.delete(`http://localhost:3000/api/etudiants/${id}`)
+      .then(res => {
+        console.log(res)
+        console.log(res.data)
+    
+        const etudiants=this.state.etudiants.filter(item => item.id!==id)
+        this.setState({etudiants})
+    
+      })}
 
     render(){
     return (
@@ -58,29 +69,34 @@ class StudentsTab extends Component {
                  
                 </tr>
               </thead>
+              
+              <tbody className="items">
+              {this.state.etudiants.map((item)=>(
+                <tr>
+                  
+           
+                  <td className="name">{item.name}</td>
+                  <td className="email">{item.email}</td>
+                  <td className="CE">{item.CE}</td>
+                  <td className="phone">{item.phone}</td>
+                  <td className="classe">{item.classe}</td>
+                  <td className="supervisor">{item.supervisor}</td>
+                  <td className="icone"><BsPencil/></td>
+                  <td className="icone"><BsEye/></td>
+                  <td className="icone" onClick={(e)=> this.deleteStudents(item._id,e)} ><BsTrash/></td>
+                  
+            
+                </tr>
+                ))}
+              
+              </tbody>
              
             </table>
           </div>
         </div>
       </div>
 
-          {this.state.etudiants.map((item)=>(
-            
-              <StudentsList
-              key={item._id} 
-              name = {item.name}
-              email= {item.email}
-              CE= {item.CE}
-              phone = {item.phone}
-              classe = {item.classe}
-              supervisor = {item.supervisor}
-              
-              
-              
-              />
-              
-              
-          ))}
+         
 
     
    
