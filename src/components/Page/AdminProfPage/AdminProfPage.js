@@ -1,5 +1,4 @@
 
-import NavBar from "../../NavBar/NavBar";
 import {addProf as addProfFromservice } from "../../../Services/Prof.service"
 import AddProf from "../../AddProf/AddProf";
 import { useState } from "react";
@@ -28,7 +27,7 @@ function AdminProfPage() {
   }
   return (
     <div className="AdminProfPage">
-      <NavBar />
+     
       <AddProf addProf={addProf}/>
 
     </div>

@@ -24,15 +24,14 @@ function EtudiantPage() {
       })
       setPfeRequests([...pfesRequest, newPfeRequest])
       
+      
     } catch (e) {
       console.log("error")
     }
   }
   return (
     <div className="EtudiantPage">
-      <NavBar />
-
-      <Entete title="Etudiant" btnNom="changer mot de passe" />
+      
       <Profil
         title2="Classe"
         text2="3 ing 2"

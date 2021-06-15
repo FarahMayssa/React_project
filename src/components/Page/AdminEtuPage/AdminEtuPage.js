@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import NavBar from "../../NavBar/NavBar";
-import AjoutForm from "../../AjoutForm/AjoutForm"
+
 import{ addStudent as addStudentFromservice } from "../../../Services/etudiant.service"
+import AddStudent from "../../AddStudent/AddStudent";
+
 
 
 
@@ -35,8 +36,9 @@ function AdminEtuPage() {
 
   return (
     <div className="AdminEtuPage">
-      <NavBar />
-      <AjoutForm addStudent={addStudent}/>
+      
+     
+      <AddStudent addStudent={addStudent}/>
 
     </div>
   );

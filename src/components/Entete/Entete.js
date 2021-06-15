@@ -1,6 +1,8 @@
 import "./Entete.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import AddStudent from "../../components/AddStudent/AddStudent";
 
 export default function Entete(props) {
   return (
@@ -11,11 +13,7 @@ export default function Entete(props) {
             <h4 class="page-title">{props.title}</h4>
           </div>
 
-          <div className="btnNom" class="col-sm-5 col-8 text-right m-b-30">
-            <a href="#" class="btn btn-primary btn-rounded">
-              {props.btnNom}
-            </a>
-          </div>
+       
         </div>
       </div>
     </div>

@@ -8,3 +8,11 @@ export const addPfeRequest= async (pfeRequest) => {
     )
     return result.data.pfe_demande
   }
+  export const fetchPfe= async (pfe) => {
+    //await delay(1000)
+
+    const result = await Axios.get(
+        "http://localhost:3000/api/pfes" ,pfe
+    )
+    return result.data.pfe
+  }

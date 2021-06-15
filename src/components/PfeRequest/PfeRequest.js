@@ -1,9 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./PfeRequest.css";
 import Button from "react-bootstrap/Button";
+import { Component } from "react";
 
-export default function PfeRequest() {
+class PfeRequest extends Component {
 
+  
+render (){
   return (
     <div className="PfeRequest">
       <div class="card-block">
@@ -36,5 +39,7 @@ export default function PfeRequest() {
         </div>
       </div>
     </div>
-  );
+  );}
 }
+
+export default PfeRequest;

@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./AjoutForm.css";
+import "./AddStudent.css";
 import Button from "react-bootstrap/Button";
 
 import { useState } from "react";
 
-export default function AjoutForm({addStudent}) {
+export default function AddStudent({addStudent}) {
   {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -133,6 +133,7 @@ export default function AjoutForm({addStudent}) {
                   class="btn btn-primary submit-btn"
                 > Add a Student</Button>
               </div>
+              
             </div>
           </div>
         </div>

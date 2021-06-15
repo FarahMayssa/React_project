@@ -1,3 +1,15 @@
 .Navbar{
     margin-left: 20px;
+    text-shadow: black;
+
+
+}
+   
+a{
+    text-decoration:none;
+    text-decoration-style: wavy;
+    color: black;
+    font-family: cursive;
+    font: large;
+    margin-left: 20px;
 }

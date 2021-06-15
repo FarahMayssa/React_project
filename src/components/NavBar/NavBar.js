@@ -10,17 +10,22 @@ import {
 
 } from "react-router-dom";
 
+
 export default function NavBar() {
 
  
   return (
     <div className="NavBar">
       <>
-        <Navbar bg="primary" variant="dark">
+        <Navbar bg="primary" variant="light">
           <Nav className="mr-auto">
-            <Link to="/etudiant ">Accueil</Link>
-            <Nav.Link href="#features">Enseignants</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          
+
+            <Link to="/ ">Home</Link>
+            <Link to="/admin/prof">Profs</Link>
+            <Link to="/admin/students">Students</Link>
+            <Link to="/admin/pfes">Pfes</Link>
+            <Link href="#pricing">Admin</Link>
           </Nav>
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

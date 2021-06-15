@@ -2,6 +2,7 @@ import React from "react";
 import "./ElementPfe.css"
 
 
+
 export default function ElementPfe(props) {
   return (
     <div className="ElementPfe">
@@ -12,11 +13,16 @@ export default function ElementPfe(props) {
           
               <tbody className="items">
                 <tr>
-                  <td className="pfe">{props.pfe}</td>
+                  <td className="titre">{props.titre}</td>
                   <td className="etudiant">{props.etudiant}</td>
                   <td className="encadrant">{props.encadrant}</td>
-                  <td className="date">{props.date}</td>
+                  <td className="date_accep">{props.date_accep}</td>
                   <td className="cahier">{props.cahier}</td>
+                  
+                  
+                  
+           
+                 
                   
                 </tr>
              

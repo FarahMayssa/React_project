@@ -5,3 +5,8 @@ td{
     table-layout: auto;
     width: 150px;
 }
+td.icone {
+color: blue;
+width: 0px;
+padding: 0px 0px 0px 0px;
+}
