@@ -38,6 +38,7 @@ export default function AddProf({ addProf }) {
                     </label>
 
                     <input
+                      aria-label ="FullName"
                       onChange={(e) => setName(e.target.value)}
                       name="name"
                       value={name}
@@ -52,6 +53,7 @@ export default function AddProf({ addProf }) {
                       Email <span class="text-danger">*</span>
                     </label>
                     <input
+                     aria-label = "email"
                       onChange={(e) => setEmail(e.target.value)}
                       name="email"
                       value={email}
@@ -67,6 +69,7 @@ export default function AddProf({ addProf }) {
                     <label>Phone</label>
                     <div class="cal-icon">
                       <input
+                      aria-label = "Phone"
                         onChange={(e) => setPhone(e.target.value)}
                         name="phone"
                         value={phone}
@@ -82,6 +85,7 @@ export default function AddProf({ addProf }) {
                     <label>Department</label>
                     <div class="cal-icon">
                       <input
+                      aria-label = "department"
                         onChange={(e) => setDept(e.target.value)}
                         name="dept"
                         value={dept}
@@ -96,6 +100,7 @@ export default function AddProf({ addProf }) {
 
               <div className="btn_ajout">
                 <Button
+                data-testid="addProf"
                   onClick={handleAddProf}
                   class="btn btn-primary submit-btn"
                 > Add a professor</Button>
