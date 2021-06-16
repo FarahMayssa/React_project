@@ -1,40 +1,28 @@
-
-import {addProf as addProfFromservice } from "../../../Services/Prof.service"
+import { addProf as addProfFromservice } from "../../../Services/Prof.service";
 import AddProf from "../../AddProf/AddProf";
 import { useState } from "react";
 
-
-
 function AdminProfPage() {
-  const [profs, setProfs] = useState([])
+  const [profs, setProfs] = useState([]);
 
-
-  const addProf = async (name,email,phone,dept) => {
+  const addProf = async (name, email, phone, dept) => {
     try {
-     
       const newProf = await addProfFromservice({
-        name:name,
-        email:email,
-        phone:phone,
-        dept:dept
-        
-      })
-      setProfs([...profs, newProf])
-      
+        name: name,
+        email: email,
+        phone: phone,
+        dept: dept,
+      });
+      setProfs([...profs, newProf]);
     } catch (e) {
-      console.log("error")
+      console.log("error");
     }
-  }
+  };
   return (
     <div className="AdminProfPage">
-     
-      <AddProf addProf={addProf}/>
-
+      <AddProf addProf={addProf} />
     </div>
   );
 }
 
 export default AdminProfPage;
-
- 
-

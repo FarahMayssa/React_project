@@ -1,45 +1,30 @@
 import React, { useState } from "react";
 
-
-import{ addStudent as addStudentFromservice } from "../../../Services/etudiant.service"
+import { addStudent as addStudentFromservice } from "../../../Services/etudiant.service";
 import AddStudent from "../../AddStudent/AddStudent";
 
-
-
-
 function AdminEtuPage() {
-  const [students, setStudents] = useState([])
+  const [students, setStudents] = useState([]);
 
-
-  const addStudent = async (name,email,CE,phone,classe,supervisor ) => {
+  const addStudent = async (name, email, CE, phone, classe, supervisor) => {
     try {
-     
       const newStudent = await addStudentFromservice({
-        name:name,
-        email:email,
-        CE:CE,
-        phone:phone,
-        classe:classe,
-        supervisor:supervisor
-        
-      })
-      setStudents([...students, newStudent])
-      
+        name: name,
+        email: email,
+        CE: CE,
+        phone: phone,
+        classe: classe,
+        supervisor: supervisor,
+      });
+      setStudents([...students, newStudent]);
     } catch (e) {
-      console.log("error")
+      console.log("error");
     }
-  }
-
- 
-
-  
+  };
 
   return (
     <div className="AdminEtuPage">
-      
-     
-      <AddStudent addStudent={addStudent}/>
-
+      <AddStudent addStudent={addStudent} />
     </div>
   );
 }

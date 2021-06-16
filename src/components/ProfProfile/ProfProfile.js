@@ -1,13 +1,14 @@
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
+import { Card } from "react-bootstrap";
 import { Component } from "react";
 
 class ProfProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      profs:[]
+      profs: [],
     };
   }
 
@@ -17,7 +18,6 @@ class ProfProfile extends Component {
         "http://localhost:3000/api/enseignant/" + this.props.match.params.name,
         {}
       )
-      
 
       .then((response) => {
         this.setState({
@@ -34,11 +34,7 @@ class ProfProfile extends Component {
       <div className="Profil">
         <div class="profile-view">
           <div class="profile-basic">
-            <div class="row">
-              <div class="profile-img">
-                <img src="prof.jpg" />
-              </div>
-              {this.state.profs.map(item => (
+            {this.state.profs.map((item) => (
               <div class="col-sm-4">
                 <div class="profile-info-left">
                   <div class="staff-id">
@@ -60,8 +56,7 @@ class ProfProfile extends Component {
                   </div>
                 </div>
               </div>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </div>

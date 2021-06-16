@@ -3,28 +3,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Component } from "react";
 
-
-
 class ProfInfo extends Component {
-    
-    
   constructor(props) {
     super(props);
     this.state = {
       profs: [],
     };
   }
-  
-  
-   
-  componentDidMount(){
-   
-      axios
-      .get("http://localhost:3000/api/enseignants/"+this.props.match.params.id, {})
+
+  componentDidMount() {
+    axios
+      .get(
+        "http://localhost:3000/api/enseignants/" + this.props.match.params.id,
+        {}
+      )
 
       .then((response) => {
         this.setState({
-          profs:response.data
+          profs: response.data,
         });
       })
       .catch(function (error) {
@@ -33,19 +29,13 @@ class ProfInfo extends Component {
   }
 
   render() {
-   
     return (
       <div className="Profil">
         <div class="profile-view">
           <div class="profile-basic">
             <div class="row">
-            <div class="profile-img">
-                <img src="prof.jpg"  />
-              </div>
-              
               <div class="col-sm-4">
                 <div class="profile-info-left">
-               
                   <div class="staff-id">
                     <span class="title1">Name: </span>
                     <span class="text1"> {this.state.profs.name}</span>
@@ -65,7 +55,6 @@ class ProfInfo extends Component {
                   </div>
                 </div>
               </div>
-             
             </div>
           </div>
         </div>

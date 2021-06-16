@@ -4,33 +4,30 @@ import Button from "react-bootstrap/Button";
 
 import { useState } from "react";
 
-export default function AddStudent({addStudent}) {
+export default function AddStudent({ addStudent }) {
   {
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [CE, setCE] = useState("")
-    const [phone, setPhone] = useState("")
-    const [classe, setClasse] = useState("")
-    const [supervisor, setSupervisor] = useState("")
-   
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [CE, setCE] = useState("");
+    const [phone, setPhone] = useState("");
+    const [classe, setClasse] = useState("");
+    const [supervisor, setSupervisor] = useState("");
 
     const handleAddStudent = () => {
-      addStudent(name, email, CE, phone,classe,supervisor)
-      setName("")
-      setEmail("")
-      setCE("")
-      setPhone("")
-      setClasse("")
-      setSupervisor("")
-      
-      
+      addStudent(name, email, CE, phone, classe, supervisor);
+      setName("");
+      setEmail("");
+      setCE("");
+      setPhone("");
+      setClasse("");
+      setSupervisor("");
     };
 
     return (
       <div class="page-wrapper">
         <div class="content">
           <div class="titre">
-            <h4 className="text"></h4>
+            <h4 className="text">Add Student</h4>
           </div>
 
           <div class="row">
@@ -123,17 +120,17 @@ export default function AddStudent({addStudent}) {
                     </div>
                   </div>
                 </div>
-               
-         
               </div>
 
               <div className="btn_ajout">
                 <Button
                   onClick={handleAddStudent}
                   class="btn btn-primary submit-btn"
-                > Add a Student</Button>
+                >
+                  {" "}
+                  Add a Student
+                </Button>
               </div>
-              
             </div>
           </div>
         </div>

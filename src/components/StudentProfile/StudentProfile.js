@@ -40,10 +40,6 @@ class StudentProfile extends Component {
         <div class="profile-view">
           <div class="profile-basic">
             <div class="row">
-            <div class="profile-img">
-                <img src="prof.jpg"  />
-              </div>
-              
               <div class="col-sm-4">
                 <div class="profile-info-left">
                

@@ -6,20 +6,20 @@ import { BsPencil, BsTrash, BsEye } from "react-icons/bs";
 
 import { Link } from "react-router-dom";
 
-class ProfTab extends Component {
+class YearTab extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      profs: [],
+      years: [],
     };
   }
 
   componentDidMount(props) {
     axios
-      .get("http://localhost:3000/api/enseignants", {})
+      .get("http://localhost:3000/api/annees", {})
       .then((response) => {
         this.setState({
-          profs: response.data,
+          years: response.data,
         });
       })
       .catch(function (error) {
@@ -27,22 +27,22 @@ class ProfTab extends Component {
       });
   }
 
-  deleteProfs(id, e) {
-    axios.delete(`http://localhost:3000/api/enseignants/${id}`).then((res) => {
+  deleteYears(id, e) {
+    axios.delete(`http://localhost:3000/api/annees/${id}`).then((res) => {
       console.log(res);
       console.log(res.data);
 
-      const profs = this.state.profs.filter((item) => item.id !== id);
-      this.setState({ profs });
+      const years = this.state.years.filter((item) => item.id !== id);
+      this.setState({ years });
     });
   }
 
   render() {
     return (
       <>
-        <div className="Prof_Tab">
-          <Link style={{ textDecoration: "none" }} to="/admin/addProf">
-            Add Professor
+        <div className="Year_Tab">
+          <Link style={{ textDecoration: "none" }} to="/admin/addYear">
+            Add Year
           </Link>
 
           <div className="row">
@@ -51,32 +51,26 @@ class ProfTab extends Component {
                 <table className="table table-border table-striped custom-table datatable mb-0">
                   <thead>
                     <tr>
-                      <th className="name1">Name</th>
-                      <th className="email1">Email</th>
-                      <th className="CE">Phone</th>
-                      <th className="phone1">Department</th>
+                      <th className="start">Begining of the year</th>
+                      <th className="end">End of the year</th>
                     </tr>
                   </thead>
                   <tbody className="items">
-                    {this.state.profs.map((item) => (
+                    {this.state.years.map((item) => (
                       <tr>
-                        <td className="name">{item.name}</td>
-                        <td className="email">{item.email}</td>
-                        <td className="phone">{item.phone}</td>
-                        <td className="dept">{item.dept}</td>
+                        <td className="start">{item.debut}</td>
+                        <td className="email">{item.fin}</td>
 
-                        <Link to={"/admin/prof/" + item._id}>
-                          <td className="icone">
-                            <BsEye />
-                          </td>
-                        </Link>
+                        <td className="icone">
+                          <BsEye />
+                        </td>
 
                         <td className="icone">
                           <BsPencil />
                         </td>
                         <td
                           className="icone"
-                          onClick={(e) => this.deleteProfs(item._id, e)}
+                          onClick={(e) => this.deleteYears(item._id, e)}
                         >
                           <BsTrash />
                         </td>
@@ -93,4 +87,4 @@ class ProfTab extends Component {
   }
 }
 
-export default ProfTab;
+export default YearTab;

@@ -13,11 +13,8 @@ function ProfPage() {
     <div className="ProfPage">
       <Route path="/Prof/:name" render={(props) => <ProfProfile {...props} />} />
       
-      {/*<Route exact path="/requet/:name" component={PfeRequest}/>*/}
-      {/*<Link style={{ textDecoration: "none" }} to={"/request/"+name}>
-            Show requests
-  </Link>*/}
-  <Link to={{pathname:`/requet/${name}`}}>haja</Link>
+     
+  <Link to={{pathname:`/requet/${name}`}}>Requests</Link>
   
       
 

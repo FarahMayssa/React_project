@@ -10,15 +10,14 @@ export default function AddProf({ addProf }) {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [dept, setDept] = useState("");
-   
 
     const handleAddProf = () => {
-      addProf(name, email, phone,dept);
+      addProf(name, email, phone, dept);
       setName("");
       setPhone("");
       setEmail("");
       setDept("");
-
+      alert("Professor Added");
     };
 
     return (
@@ -38,7 +37,7 @@ export default function AddProf({ addProf }) {
                     </label>
 
                     <input
-                      aria-label ="FullName"
+                      aria-label="FullName"
                       onChange={(e) => setName(e.target.value)}
                       name="name"
                       value={name}
@@ -53,7 +52,7 @@ export default function AddProf({ addProf }) {
                       Email <span class="text-danger">*</span>
                     </label>
                     <input
-                     aria-label = "email"
+                      aria-label="email"
                       onChange={(e) => setEmail(e.target.value)}
                       name="email"
                       value={email}
@@ -62,14 +61,13 @@ export default function AddProf({ addProf }) {
                     />
                   </div>
                 </div>
-         
 
                 <div class="col-md-4">
                   <div class="form-group">
                     <label>Phone</label>
                     <div class="cal-icon">
                       <input
-                      aria-label = "Phone"
+                        aria-label="Phone"
                         onChange={(e) => setPhone(e.target.value)}
                         name="phone"
                         value={phone}
@@ -85,7 +83,7 @@ export default function AddProf({ addProf }) {
                     <label>Department</label>
                     <div class="cal-icon">
                       <input
-                      aria-label = "department"
+                        aria-label="department"
                         onChange={(e) => setDept(e.target.value)}
                         name="dept"
                         value={dept}
@@ -95,15 +93,17 @@ export default function AddProf({ addProf }) {
                     </div>
                   </div>
                 </div>
-         
               </div>
 
               <div className="btn_ajout">
                 <Button
-                data-testid="addProf"
+                  data-testid="addProf"
                   onClick={handleAddProf}
                   class="btn btn-primary submit-btn"
-                > Add a professor</Button>
+                >
+                  {" "}
+                  Add a professor
+                </Button>
               </div>
             </div>
           </div>

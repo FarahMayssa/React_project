@@ -6,7 +6,7 @@ export class Signup extends React.Component {
   state = {
     email: "",
     password: "",
-    cpassword: ""
+    cpassword: "",
   };
   send = async () => {
     const { email, password, cpassword } = this.state;
@@ -15,14 +15,14 @@ export class Signup extends React.Component {
     try {
       const { data } = await API.signup({ email, password });
       localStorage.setItem("token", data.token);
-      window.location = "/student";
+      window.location = "/login";
     } catch (error) {
       console.error(error);
     }
   };
   handleChange = (event) => {
     this.setState({
-      [event.target.id]: event.target.value
+      [event.target.id]: event.target.value,
     });
   };
   render() {
@@ -54,6 +54,7 @@ export class Signup extends React.Component {
             type="password"
           />
         </FormGroup>
+
         <Button onClick={this.send} block bsSize="large" type="submit">
           Inscription
         </Button>

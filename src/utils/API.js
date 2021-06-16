@@ -10,7 +10,8 @@ export default {
       `${burl}/user/login`,
       {
         email,
-        password
+        password,
+        
       },
       {
         headers: headers

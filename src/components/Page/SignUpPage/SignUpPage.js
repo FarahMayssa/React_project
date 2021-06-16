@@ -1,16 +1,10 @@
 import React from "react";
-import {Signup} from "../../Signup/Signup"
-
+import { Signup } from "../../Signup/Signup";
 
 function SignUpPage() {
-
-
   return (
     <div className="SignUpPage">
-
-      <Signup/>
-      
-      
+      <Signup />
     </div>
   );
 }

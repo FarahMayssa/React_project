@@ -5,26 +5,19 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./NavBar.css";
-import {
- Link ,NavLink, useHistory
-
-} from "react-router-dom";
-
+import { Link, NavLink, useHistory } from "react-router-dom";
 
 export default function NavBar() {
-
- 
   return (
     <div className="NavBar">
       <>
         <Navbar bg="primary" variant="light">
           <Nav className="mr-auto">
-          
+            <Link to="/admin/prof">Professors</Link>
 
-            <Link to="/ ">Home</Link>
-            <Link to="/admin/prof">Profs</Link>
             <Link to="/admin/students">Students</Link>
             <Link to="/admin/pfes">Pfes</Link>
+            <Link to="/admin/year">Scolar Year</Link>
             <Link href="#pricing">Admin</Link>
           </Nav>
           <Form inline>

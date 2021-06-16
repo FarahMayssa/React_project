@@ -1,11 +1,12 @@
 import React from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import API from "../../utils/API";
+import "./Login.css";
 
 export class Login extends React.Component {
   state = {
     email: "",
-    password: ""
+    password: "",
   };
   send = async () => {
     const { email, password } = this.state;
@@ -18,21 +19,21 @@ export class Login extends React.Component {
     try {
       const { data } = await API.login(email, password);
       localStorage.setItem("token", data.token);
-      window.location = "/etudiant";
+      window.location = "/admin/prof";
     } catch (error) {
       console.error(error);
     }
   };
   handleChange = (event) => {
     this.setState({
-      [event.target.id]: event.target.value
+      [event.target.id]: event.target.value,
     });
   };
   render() {
     const { email, password } = this.state;
     return (
       <div className="Login">
-        <FormGroup controlId="email" bsSize="large">
+        <FormGroup controlId="email" bsSize="medium">
           Email
           <FormControl
             autoFocus
@@ -41,7 +42,7 @@ export class Login extends React.Component {
             onChange={this.handleChange}
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
+        <FormGroup controlId="password" bsSize="medium">
           Password
           <FormControl
             value={password}
@@ -49,6 +50,7 @@ export class Login extends React.Component {
             type="password"
           />
         </FormGroup>
+
         <Button onClick={this.send} block bsSize="large" type="submit">
           Connexion
         </Button>

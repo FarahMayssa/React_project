@@ -12,8 +12,6 @@ export default function Entete(props) {
           <div className="title" class="col-ml-7 col-6">
             <h4 class="page-title">{props.title}</h4>
           </div>
-
-       
         </div>
       </div>
     </div>
