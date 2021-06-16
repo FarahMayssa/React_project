@@ -18,7 +18,7 @@ export default function Profil(props) {
             <div class="col-sm-4">
               <div class="profile-info-left">
                 <div class="staff-id">
-                  <span class="title1">Nom et Prénom: </span>
+                  <span class="title1">Name </span>
                   <span class="text1"> Ali</span>
                 </div>
                 <div class="staff-id">

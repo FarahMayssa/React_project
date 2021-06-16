@@ -3,8 +3,6 @@ import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import EtudiantPage from "./components/Page/EtudiantPage/EtudiantPage";
-import ProfPage from "./components/Page/ProfPage/ProfPage";
 
 import AdminProfPage from "./components/Page/AdminProfPage/AdminProfPage";
 import AdminEtuPage from "./components/Page/AdminEtuPage/AdminEtuPage";
@@ -17,6 +15,10 @@ import StudentsTab from "./components/StudentsTab/StudentsTab";
 import PfeTab from "./components/PfeTab/PfeTab";
 import ProfTab from "./components/ProfTab/ProfTab";
 import ProfInfo from "./components/ProfInfo/ProfInfo";
+import StudentInfo from "./components/StudentInfo/StudentInfo";
+import ProfPage from "./components/Page/ProfPage/ProfPage"
+import EtudiantPage from "./components/Page/EtudiantPage/EtudiantPage"
+import PfeRequest from "./components/PfeRequest/PfeRequest";
 
 function App() {
   return (
@@ -25,12 +27,19 @@ function App() {
         <HomePage />
 
         <Switch>
-          <Route exact path="/student">
+       
+          
+           <Route exact path="/student/:id">
             <EtudiantPage />
           </Route>
-          <Route path="/Prof">
+          <Route exact path="/Prof/:name">
             <ProfPage />
           </Route>
+          <Route exact path="/request/:name">
+            <PfeRequest />
+          </Route>
+         
+        
           <Route exact path="/admin/pfes">
             <PfeTab />
           </Route>
@@ -45,6 +54,16 @@ function App() {
             exact
             path="/admin/prof/:id"
             render={(props) => <ProfInfo {...props} />}
+          />
+          <Route
+            exact
+            path="/requet/:name"
+            render={(props) => <PfeRequest {...props} />}
+          />
+          <Route
+            exact
+            path="/admin/student/:id"
+            render={(props) => <StudentInfo {...props} />}
           />
           <Route exact path="/admin/addProf">
             <AdminProfPage />

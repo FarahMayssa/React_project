@@ -1,27 +1,29 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, useParams } from "react-router-dom";
 
-import NavBar from "../../NavBar/NavBar";
-
-import Profil from "../../Profil/Profil";
-
-
-import PfeRequest from "../../PfeRequest/PfeRequest";
+import ProfProfile from "../../ProfProfile/ProfProfile"
 import PfeTab from "../../PfeTab/PfeTab";
-import ElementPfe from "../../ElementPfe/ElementPfe";
+import { Link } from "react-router-dom";
+import PfeRequest from "../../PfeRequest/PfeRequest";
+
 
 function ProfPage() {
-
- 
+  let {name} = useParams()
   return (
     <div className="ProfPage">
- 
-      <Profil title2="spécialité" text2="Réseau" title3="Bureau" text3="A14" />
+      <Route path="/Prof/:name" render={(props) => <ProfProfile {...props} />} />
       
-       
-        <PfeTab  />
+      {/*<Route exact path="/requet/:name" component={PfeRequest}/>*/}
+      {/*<Link style={{ textDecoration: "none" }} to={"/request/"+name}>
+            Show requests
+  </Link>*/}
+  <Link to={{pathname:`/requet/${name}`}}>haja</Link>
+  
       
+
+      <PfeTab />
+     
       
-      <PfeRequest />
     </div>
   );
 }

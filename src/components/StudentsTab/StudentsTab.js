@@ -82,7 +82,11 @@ class StudentsTab extends Component {
                   <td className="classe">{item.classe}</td>
                   <td className="supervisor">{item.supervisor}</td>
                   <td className="icone"><BsPencil/></td>
-                  <td className="icone"><BsEye/></td>
+                  <Link to ={"/admin/student/"+item._id}>
+                          <td className="icone">
+                            <BsEye  />
+                          </td>
+                  </Link>
                   <td className="icone" onClick={(e)=> this.deleteStudents(item._id,e)} ><BsTrash/></td>
                   
             

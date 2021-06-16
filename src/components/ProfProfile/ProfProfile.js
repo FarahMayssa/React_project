@@ -3,28 +3,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Component } from "react";
 
-
-
-class ProfInfo extends Component {
-    
-    
+class ProfProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      profs: [],
+      profs:[]
     };
   }
-  
-  
-   
-  componentDidMount(){
-   
-      axios
-      .get("http://localhost:3000/api/enseignants/"+this.props.match.params.id, {})
+
+  componentDidMount() {
+    axios
+      .get(
+        "http://localhost:3000/api/enseignant/" + this.props.match.params.name,
+        {}
+      )
+      
 
       .then((response) => {
         this.setState({
-          profs:response.data
+          profs: response.data,
         });
       })
       .catch(function (error) {
@@ -33,39 +30,37 @@ class ProfInfo extends Component {
   }
 
   render() {
-   
     return (
       <div className="Profil">
         <div class="profile-view">
           <div class="profile-basic">
             <div class="row">
-            <div class="profile-img">
-                <img src="prof.jpg"  />
+              <div class="profile-img">
+                <img src="prof.jpg" />
               </div>
-              
+              {this.state.profs.map(item => (
               <div class="col-sm-4">
                 <div class="profile-info-left">
-               
                   <div class="staff-id">
                     <span class="title1">Name: </span>
-                    <span class="text1"> {this.state.profs.name}</span>
+                    <span class="text1"> {item.name}</span>
                   </div>
                   <div class="staff-id">
                     <span class="title2">Email: </span>
-                    <span class="text2">{this.state.profs.email}</span>
+                    <span class="text2">{item.email}</span>
                   </div>
 
                   <div class="staff-id">
                     <span class="title3">Phone : </span>
-                    <span class="text3">{this.state.profs.phone}</span>
+                    <span class="text3">{item.phone}</span>
                   </div>
                   <div class="staff-id">
                     <span class="title4">Department </span>
-                    <span class="text4">{this.state.profs.dept}</span>
+                    <span class="text4">{item.dept}</span>
                   </div>
                 </div>
               </div>
-             
+              ))}
             </div>
           </div>
         </div>
@@ -73,4 +68,4 @@ class ProfInfo extends Component {
     );
   }
 }
-export default ProfInfo;
+export default ProfProfile;
